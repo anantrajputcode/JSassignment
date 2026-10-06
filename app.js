@@ -464,3 +464,160 @@ console.log(fruits);
 // sort()       -> Sort the array
 //
 // ----------------------------------------------------------
+// ==========================================================
+//                 map() AND filter()
+// ==========================================================
+
+
+// ==========================================================
+// 1. map()
+// ==========================================================
+//
+// DEFINITION:
+// map() is an array method that creates a NEW ARRAY by
+// applying a function to EVERY element of the original array.
+//
+// WHAT DOES IT DO?
+// It is mainly used to TRANSFORM or MODIFY the values
+// of an array.
+//
+// IMPORTANT:
+// - Runs on every element
+// - Returns a NEW array
+// - Original array is NOT changed
+// - Usually the new array has the SAME length
+//
+// SYNTAX:
+//
+// array.map(function(element) {
+//     return newValue;
+// });
+//
+// ==========================================================
+
+
+let numbers = [1, 2, 3, 4, 5];
+
+let doubled = numbers.map(function(num) {
+    return num * 2;
+});
+
+console.log(doubled);
+
+// Output:
+// [2, 4, 6, 8, 10]
+
+
+// The original array is still unchanged.
+
+console.log(numbers);
+
+// Output:
+// [1, 2, 3, 4, 5]
+
+
+
+// ----------------------------------------------------------
+// Shorter way using arrow function
+// ----------------------------------------------------------
+
+let squares = numbers.map(num => num * num);
+
+console.log(squares);
+
+// Output:
+// [1, 4, 9, 16, 25]
+
+
+
+// ==========================================================
+// 2. filter()
+// ==========================================================
+//
+// DEFINITION:
+// filter() is an array method that creates a NEW ARRAY
+// containing only the elements that satisfy a condition.
+//
+// WHAT DOES IT DO?
+// It is mainly used to SELECT or KEEP specific elements
+// from an array.
+//
+// IMPORTANT:
+// - Checks every element
+// - Uses a condition
+// - If condition is TRUE → element is included
+// - If condition is FALSE → element is excluded
+// - Returns a NEW array
+// - Original array is NOT changed
+// - New array can have fewer elements
+//
+// SYNTAX:
+//
+// array.filter(function(element) {
+//     return condition;
+// });
+//
+// ==========================================================
+
+
+let numbers2 = [1, 2, 3, 4, 5, 6];
+
+let evenNumbers = numbers2.filter(function(num) {
+    return num % 2 === 0;
+});
+
+console.log(evenNumbers);
+
+// Output:
+// [2, 4, 6]
+
+
+
+// ----------------------------------------------------------
+// Shorter way using arrow function
+// ----------------------------------------------------------
+
+let greaterThanThree = numbers2.filter(num => num > 3);
+
+console.log(greaterThanThree);
+
+// Output:
+// [4, 5, 6]
+
+
+
+// ==========================================================
+//               MAIN DIFFERENCE
+// ==========================================================
+//
+// map()
+// → TRANSFORMS every element
+//
+// Example:
+//
+// [1, 2, 3]
+//     ↓ map(x => x * 2)
+// [2, 4, 6]
+//
+//
+// filter()
+// → SELECTS elements based on a condition
+//
+// Example:
+//
+// [1, 2, 3, 4]
+//     ↓ filter(x => x > 2)
+// [3, 4]
+//
+// ==========================================================
+
+
+// ==========================================================
+//                 EASY WAY TO REMEMBER
+// ==========================================================
+//
+// map()    → "Change every element"
+//
+// filter() → "Keep only the elements I want"
+//
+// ==========================================================
